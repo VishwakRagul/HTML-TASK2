@@ -1,0 +1,271 @@
+<!-- <html>
+    <head>
+        <title>
+            web
+        </title>
+    </head>
+    <style>
+          .grid-container{
+            display: grid;
+            grid-template-columns: auto auto auto;
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+
+          }
+
+            .start{
+                animation-play-state:paused;
+            }
+
+            .centre:hover{
+              color:black;
+
+            }
+            .marquee:hover{
+                animation-play-state:paused;
+            }
+
+          .top{
+            background-color: orange;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            /* line-height: 50px; */
+          }
+
+          .centre{
+            background-color: white;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            color: white;
+            font-size:12rem;
+
+          } 
+
+          .bottom{
+            background-color: green;
+            grid-column-start: 1;
+            grid-column-end: 4;
+            /* line-height: 70px; */
+          }
+         
+    </style>
+    <body>
+        <center>
+            <h1>India</h1>
+            <div class="start">
+            <div class="grid-container">
+                  <div class="top">
+                    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>
+                    </marquee>
+                  </div>
+
+                   <div class="centre" >India</div>
+
+                  <div class="bottom">
+                    <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>
+                        <p>India is our country all are brothers and sisters</p>    
+                    </marquee>
+                  </div>
+                  </div>
+            </div>
+        </center>
+    </body>
+</html> -->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>web</title>
+    <style>
+        /* Main grid container styling */
+        .grid-container {
+            display: grid;
+            grid-template-rows: 1fr 2fr 1fr;
+            width: 600px;
+            height: 600px;
+            border: 2px solid black;
+            position: relative;
+        }
+
+        /* Styling for top and bottom marquee sections */
+        .top, .bottom {
+            text-align: center;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .top {
+            background-color: orange;
+        }
+
+        .bottom {
+            background-color: green;
+        }
+
+        /* Center text styling */
+        .centre {
+            background-color: white;
+            color: white; /* Initially hidden */
+            font-size: 4rem;
+            text-align: center;
+            line-height: 200px; /* Center vertically */
+            visibility: hidden; /* Hidden by default */
+        }
+
+        /* Show center text on hover */
+        .grid-container:hover .centre {
+            color: black; /* Visible text color */
+            visibility: visible; /* Show on hover */
+        }
+
+        /* Marquee scrolling animation */
+        .marquee-text {
+            display: inline-block;
+            animation: scroll-left 10s linear infinite;
+            white-space: nowrap;
+            font-size: 1.5rem;
+            padding: 20px 0;
+        }
+
+        /* Define marquee animation for scrolling left */
+        @keyframes scroll-left {
+            from { 
+                transform: translateX(-100%);
+            }
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        /* Pause marquee animation on container hover */
+        .grid-container:hover .marquee-text {
+            animation-play-state: paused;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>India</h1>
+        <div class="grid-container">
+            <!-- Top marquee section with CSS animation -->
+            <div class="top">
+                <div class="marquee-text">India is our country, all are brothers and sisters</div>
+            </div>
+
+            <!-- Center text "India" that appears on hover -->
+            <div class="centre">India</div>
+
+            <!-- Bottom marquee section with CSS animation -->
+            <div class="bottom">
+                <div class="marquee-text">India is our country, all are brothers and sisters</div>
+            </div>
+        </div>
+    </center>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <!-- <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Web</title>
+     <style>
+         .grid-container {
+             display: grid;
+             grid-template-columns: auto auto auto;
+             width: 600px;
+             height: 600px;
+             border: 2px solid black;
+         }
+ 
+         .top {
+             background-color: orange;
+             grid-column: 1 / 4;
+         }
+ 
+         .centre {
+             background-color: white;
+             grid-column: 1 / 4;
+             color: white;
+             font-size: 12rem;
+         }
+ 
+         .bottom {
+             background-color: green;
+             grid-column: 1 / 4;
+         }
+ 
+         .centre:hover {
+             color: black;
+         }
+     </style>
+ </head>
+ <body>
+     <center>
+         <h1>India</h1>
+
+         <div class="start">
+         <div class="grid-container">
+             <div class="top">
+                 <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                 </marquee>
+             </div>
+             <div class="centre">India</div>
+             <div class="bottom">
+                 <marquee onmouseover="this.stop();" onmouseout="this.start();">
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                     <p>India is our country; all are brothers and sisters.</p>
+                 </marquee>
+                </div>
+             </div>
+         </div>
+     </center>
+ </body>
+ </html>
+  -->
